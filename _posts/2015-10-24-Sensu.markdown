@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "Sensu"
+date:   2015-10-24
+author: Toby Jackson
+categories: monitoring
+image: img/sensu_fan.png
+tags:  scalable distributed monitoring  
+---
+
+[Sensu](http://sensuapp.org/) is a distributed scalable monitoring solution, written in Ruby with a JVM option for Enterprise users. It has multi-master redundancy using a message broker architecture to distribute messages from clients.
+Clients are configured to either _push_ messages to the master, or provide results in response to requests _from_
+the masters.
+
+
+* TOC
+{:toc}
+
+### Key Points
+
+* Compatible with Nagios style checks
+* Lightweight agent and servers
+* Uses RabbitMQ or Redis for message brokers
+* Very simple configuration through JSON
+* Uses Redis as a key/value database
+    * Can be purged completely with no lasting impact to Sensu
+    * Maintains last 20 events for Flap detection
+    * Maintains list of 'silenced' alerts
+    * Maintains list of 'known' clients - to allow alerts when machines stop responding
+* Great community support from [freenode#sensu](https://botbot.me/freenode/sensu/)
+
+
+### Getting Started
+
+The online [getting started](https://sensuapp.org/docs/latest/installation-overview) documentation is a perfect
+place to begin your experimentation with Sensu.
+
+It basically boils down to:
+
+1. Install Redis, RabbitMQ and Sensu servers
+2. Configure the various components to talk to eachother
+3. Define your first checks and you're done
+4. Optionally install a dashboard such as Uchiwa, (recommended)
+
+
+#### Sensu Community Plugins
+
+You'll find that there exist lots of sensu checks already created by the Sensu community, many of these have been
+placed onto GitHub for others to easily find.
+
+Check out [github.com/sensu-plugins](https://github.com/sensu-plugins) for more information on the scripts and
+checks that are avaliable.
+
+
+### Additional Resources
+
+
+#### WTF is Sensu presentation slides
+
+Slides from a presentation I gave at [Bristol DevOps](http://www.meetup.com/Bristol-DevOps/events/225340610/) which
+explains the importance and prioritisation you need to give for effective monitoring of your product, and its impact
+on your customers.
+
+<iframe src="http://www.slideshare.net/warmfusion/slideshelf" width="760px" height="570px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
+#### Docker and Sensu
+
+A set of sensu docker containers that can help provision automated checks of docker containers
+
+[github.com/warmfusion/docker-sensu](https://github.com/warmfusion/docker-sensu)
+
+
+#### Mosaic - A Dashboard I Made
+
+A simple information radiator for use with Sensu that uses the Uchiwa (< 0.11) api to provide a TV sized board that
+can let users quickly know the state of health for a large number of machines at once.
+
+[github.com/warmfusion/mosaic](https://github.com/warmfusion/mosaic)
+
+![Mosaic Screenshot](https://github.com/warmfusion/mosaic/raw/gh-pages/doc/example.png)

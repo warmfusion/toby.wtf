@@ -1,15 +1,28 @@
 # Site settings
 title: toby.wtf/is
 email: toby@warmfusion.co.uk
-description: > # this means to ignore newlines until "baseurl:"
-  A place for me to describe things that I feel familiar enough
-  with to share with others
+description: >
+  Through my work at Future PLC I get
+  the chance to discover new and interesting technologies that others 
+  may not have been exposed to. This site shares some of that experience
+  by letting people ask Toby, WTF is...
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://toby.wtf" # the base hostname & protocol for your site
 twitter_username: warmfusion
 github_username:  warmfusion
 
+# Layout settings
+header_type: default  # values [ drawer, default ]
+post_type: highlight    # values [ highlight, default ]
+pagination_type: ops  # values [ ops, default ]
+
+more_vert:
+  option1:
+    name: warmfusion.co.uk
+    link: http://www.warmfusion.co.uk
+  option2:
+    name: Cool Option 2
+    link: www.myawesomelink.com
+
 # Build settings
 markdown: kramdown
-
-permalink:   /is/:title
