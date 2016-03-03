@@ -28,3 +28,6 @@ permalink: is/:title
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jemoji

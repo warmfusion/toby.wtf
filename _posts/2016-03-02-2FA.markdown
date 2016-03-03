@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "Two Factor Authentication"
+date:   2015-10-24
+author: Toby Jackson
+categories: security
+image: img/Google-Authenticator.jpg
+tags:  security authentication  
+---
+
+Two Factor Authentication (2FA) is a term commonly associated with making your digital life more secure, but what does it mean, how does it typically work, and why should you bother?
+
+# One Factor? Two Factor? More?
+
+The factor in 'two factor' refers to one of the three components that can proove someones identity by providing;
+
+* Something that you know
+    * For example a password, pin, or answer to a secret question
+* Something that you have
+    * Your debit card, keys, or mobile phone
+* Something you _are_
+    * Fingerprints, voice print , DNA, iris scans or other biometrics
+
+Many online systems simply rely on a one-factor authentication system; by accepting a password to indicate proof of identity, while this is simple to use, both for the company and their users, it exposes both parties to security risks.
+
+> Note that having two items of the same component, for example a known username and password, or password and answer to question does not result in two-factor authentication. True two-factor authentication must use two different components from the list above.
+
+## So whats wrong with one-factor authentication?
+
+The problem with relying on only a single factor for your authentication is that you present a much easier target for theft or hacking.
+
+Consider that your car keys represent a single factor authentication system - with the keys you may take the car - the same is true for any single-factor authentication system. If someone gets hold of the username and password used to login to a website, they are in.
+
+> :warning: There have been a number of recent examples of high-profile cyber attacks, and data leaks from both government and commercial systems which have led to the wide-spread leak of user credentials. These credentials have been added to automated systems which systematically attack email, social and ecommerce websites trying to break into any accounts they can.
+
+The loss of a frequently reused, or easily guessed password without the additional security of a second factor allows a hacker with trivial access to your accounts.
+
+
+### Side Note - Two-Factor on the High Street
+
+Debit and credit cards were historically one-factor security systems; by simply having possession of the cards you'd be able to make payments both online and on the high street, with the only security measure being a copy of the signiture already drawn on the back.
+
+With the addition of Chip and Pin, a second factor was added to the system where purchasing items would require not only the presence of the card (Something you have), but now also the entry of the 4-digit pin code (Something you know) before the payment would become authorised.
+
+> :white_check_mark: Contactless payments may initially seem like a step back to one-factor authentication, however, they are a considered risk to the banks by only offering small-value payments through contactless means. 
+> 
+> I personally speculate that the banks are also adding a second factor through the use of data analysis, such that they can estimate some degree of 'who you are' - for example limiting the frequency of contactless payments, or the geographies being used. 
+
+
+# So how do I use two-factor authentication?
+
+Unfortunatly, the simplest answer is; it depends.
+
+Larger websites are starting to support two-factor authentication using a variety of mechanisms, but there isn't quite yet a convention used everywhere, but you'll find that sites such as Twitter, Ebay, PayPal, Google, Facebook etc support some form of two factor authentication.
+
+> Check [twoFactorAuth.org](https://twofactorauth.org/) for more details on specific sites, as well as handy links to the documentation on how to set it up.
+
+> :bulb: I recommend having backup options when adding two-factor authentication to a system; For example, if the site allows multiple phone numbers to be added; add both a mobile and landline, or perhaps your partners.
+> 
+> The last thing you want to find is that you've broken your phone and can't login to any websites anymore.
+
+
+## Mobile Pin Codes
+
+Many sites, PayPal, Google Mail, Twitter, and others allow you to add a mobile number to your web account which can be used when logging into a website.
+
+Then, when trying to login to your accounts, an SMS (or perhaps voice call) will be sent with a short pin code which can be entered into the site.
+
+![Mobile Pin code for Google Mail](img/2fa_mobile_sms.png)
+
+The pin code only lasts for a short time (minutes at most) and cannot be reused, which ensures that even if someone were to watch you enter the code to login, they couldn't then reuse the code themselves a few seconds later.
+
+The problem with SMS delivery of codes is that it requires you to always have your phone with you, and connected to a mobile network.
+
+It may also not be quite as secure as other systems as the code is sent on-demand to your device, and so may be intercepted by sufficiently determined attackers - However this is very unlikely, so should be considered very secure.
+
+## Google Authenticator
+
+Many sites support the use of the [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator), a smartphone application which works in a similar manner to the mobile SMS pin code, but generates the codes automatically, with no online access required at all.
+
+The device is paired with a website, through a barcode or secret key, a few test pins are provided to ensure the systems are synchronised, and its ready to go.
+
+![Google Authenticator code entry for Google Mail](img/2fa_google_auth.png)
+
+Using the google authenticator is a little more secure than using mobile text messages or voice calls, but is a little harder to setup in the first place.
+
+It is also a little less 'portable' as if you reset your phone, or uninstall the application it loses sync with the websites and you need to setup 2FA again (Hence my recommendation of having a few options for 2FA accounts)
+
+## Paper Backup Codes
+
+You may find that some sites provide the option of some 'one-use passwords' which may be printed out to be kept safe. These are useful fail-safes, but should be kept secure and crossed out when used.
+
+They are effectivly longer pin codes, and can only be used once.
+
+While they're easy to use, they're not as secure as the other two-factor methods described here and should only be used as a backup if you are unable to use an alternative, and left somewhere safe whilst not in use. 
+
+## Dedicated Hardware Token
+
+If you find yourself using lots of 2-factor systems, or are looking for something a little more robust than smart phone applications, you may be interested in using a dedicated hardware token such as a [YubiKey](https://www.yubico.com/why-yubico/for-individuals/) or [HappLink](http://www.happlink.com/fr/products.html) token.
+
+These devices typically support an up-coming authentication protocol called [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor) which provides an incredibly straight-forward method of authenticating yourself with sites such as [GitHub](https://github.com/blog/2071-github-supports-universal-2nd-factor-authentication) or [DropBox](https://blogs.dropbox.com/dropbox/2015/08/u2f-security-keys/) with the touch of a button.
+
+![GitHub asking for YubiKey auth](img/2fa_github_yubikey.png)
+
+
+# Summary of Options
+
+| Type                 | Works Offline      | Security                            | Ease of Use                         |
+|----------------------|--------------------|-------------------------------------|-------------------------------------|
+| SMS Message          | :x:                | :star2::star2::star2:               | :star2::star2::star2::star2:        |
+| Google Authenticator | :white_check_mark: | :star2::star2::star2::star2:        | :star2::star2::star2:               |
+| Paper Codes          | :white_check_mark: | :star2::star2:                      | :star2::star2::star2::star2:        |
+| Hardware Token       | :white_check_mark: | :star2::star2::star2::star2::star2: | :star2::star2::star2::star2::star2: |
+
+> Disclaimer: The table above is my own opinion, any judgment on a particular devices security merit should be made in context to the systems you are trying to secure and your own personal risk/usability tolerances.
