@@ -4,7 +4,7 @@ title:  "Two Factor Authentication"
 date:   2015-10-24
 author: Toby Jackson
 categories: security
-image: img/Google-Authenticator.jpg
+image: {{ site.url }}/img/Google-Authenticator.jpg
 tags:  security authentication  
 ---
 
@@ -66,7 +66,7 @@ Many sites, PayPal, Google Mail, Twitter, and others allow you to add a mobile n
 
 Then, when trying to login to your accounts, an SMS (or perhaps voice call) will be sent with a short pin code which can be entered into the site.
 
-![Mobile Pin code for Google Mail](/img/2fa_mobile_sms.png)
+![Mobile Pin code for Google Mail]({{ site.url }}/img/2fa_mobile_sms.png)
 
 The pin code only lasts for a short time (minutes at most) and cannot be reused, which ensures that even if someone were to watch you enter the code to login, they couldn't then reuse the code themselves a few seconds later.
 
@@ -80,7 +80,7 @@ Many sites support the use of the [Google Authenticator](https://en.wikipedia.or
 
 The device is paired with a website, through a barcode or secret key, a few test pins are provided to ensure the systems are synchronised, and its ready to go.
 
-![Google Authenticator code entry for Google Mail](/img/2fa_google_auth.png)
+![Google Authenticator code entry for Google Mail]({{ site.url }}/img/2fa_google_auth.png)
 
 Using the google authenticator is a little more secure than using mobile text messages or voice calls, but is a little harder to setup in the first place.
 
@@ -100,7 +100,7 @@ If you find yourself using lots of 2-factor systems, or are looking for somethin
 
 These devices typically support an up-coming authentication protocol called [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor) which provides an incredibly straight-forward method of authenticating yourself with sites such as [GitHub](https://github.com/blog/2071-github-supports-universal-2nd-factor-authentication) or [DropBox](https://blogs.dropbox.com/dropbox/2015/08/u2f-security-keys/) with the touch of a button.
 
-![GitHub asking for YubiKey auth](/img/2fa_github_yubikey.png)
+![GitHub asking for YubiKey auth]({{ site.url }}/img/2fa_github_yubikey.png)
 
 
 # Summary of Options
