@@ -6,6 +6,7 @@ author: Toby Jackson
 categories: security
 image: /img/Google-Authenticator.jpg
 tags:  security authentication  
+background: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Steal_password.jpg/1280px-Steal_password.jpg
 ---
 
 Two Factor Authentication (2FA) is a term commonly associated with making your digital life more secure, but what does it mean, how does it typically work, and why should you bother?
