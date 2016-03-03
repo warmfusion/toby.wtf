@@ -4,7 +4,7 @@ title:  "Two Factor Authentication"
 date:   2015-10-24
 author: Toby Jackson
 categories: security
-image: {{ site.url }}/img/Google-Authenticator.jpg
+image: /img/Google-Authenticator.jpg
 tags:  security authentication  
 ---
 
