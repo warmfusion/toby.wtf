@@ -25,15 +25,15 @@ $grey-color-dark:  darken($grey-color, 25%);
 ;
 
 
-# try and keep images in pages a sensible size
+// try and keep images in pages a sensible size
 .post-content img{
-    max-width:_posts/2016-03-02-2FA.markdown% !important;
+    max-width: 50% !important;
     max-height:50% !important;
 }
 
 .post-ribbon{
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     background-position-y: center;
     background-size: 100%;
 }
